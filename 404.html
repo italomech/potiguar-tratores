@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f5f5f2">
+  <title>Página não encontrada | Potiguar Tratores</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --yellow: #ffc900;
+      --ink: #101010;
+      --surface: #f5f5f2;
+      --muted: #62676c;
+      --line: #dcdcd6;
+      --panel: #fff;
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--surface);
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      min-height: 100svh;
+      margin: 0;
+      overflow-x: hidden;
+      background:
+        radial-gradient(ellipse at 82% 48%, rgb(255 201 0 / 9%), transparent 34rem),
+        var(--surface);
+    }
+
+    a { color: inherit; }
+
+    .page {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: min(100% - 64px, 1280px);
+      min-height: 100vh;
+      min-height: 100svh;
+      margin-inline: auto;
+    }
+
+    .page::before {
+      position: fixed;
+      z-index: -1;
+      inset: 0;
+      background-image: linear-gradient(rgb(16 16 16 / 2.4%) 1px, transparent 1px), linear-gradient(90deg, rgb(16 16 16 / 2.4%) 1px, transparent 1px);
+      background-size: 56px 56px;
+      content: "";
+      mask-image: linear-gradient(90deg, transparent, #000 42%, #000 86%, transparent);
+      pointer-events: none;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding-block: 25px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand-mark {
+      display: block;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      display: grid;
+      gap: 2px;
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: .11em;
+      line-height: 1.15;
+    }
+
+    .brand-name span:last-child {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 650;
+      letter-spacing: .2em;
+    }
+
+    main {
+      display: grid;
+      flex: 1;
+      align-content: center;
+      grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+      grid-template-areas:
+        "title visual"
+        "description visual"
+        "actions visual"
+        "note visual";
+      column-gap: clamp(28px, 5.5vw, 88px);
+      padding-block: 46px 64px;
+    }
+
+    h1 {
+      max-width: 560px;
+      grid-area: title;
+      align-self: start;
+      margin: 0;
+      font-size: clamp(38px, 5vw, 66px);
+      font-weight: 830;
+      letter-spacing: -.065em;
+      line-height: .99;
+    }
+
+    .description {
+      max-width: 500px;
+      grid-area: description;
+      align-self: start;
+      margin: 25px 0 0;
+      color: var(--muted);
+      font-size: clamp(15px, 1.25vw, 17px);
+      line-height: 1.75;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      grid-area: actions;
+      align-self: start;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 19px;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 750;
+      line-height: 1.25;
+      text-align: center;
+      text-decoration: none;
+      transition: transform .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+
+    .button:active { transform: translateY(0); }
+
+    .button:focus-visible {
+      outline: 3px solid var(--ink);
+      outline-offset: 4px;
+    }
+
+    .button-primary {
+      background: var(--yellow);
+      box-shadow: 0 7px 18px rgb(16 16 16 / 9%);
+    }
+
+    .button-primary:hover {
+      background: #ffd633;
+      box-shadow: 0 10px 24px rgb(16 16 16 / 13%);
+    }
+
+    .button-secondary {
+      border-color: var(--line);
+      background: var(--panel);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--ink);
+      background: var(--surface);
+    }
+
+    .button svg { width: 16px; height: 16px; flex: 0 0 auto; }
+
+    .note {
+      grid-area: note;
+      align-self: start;
+      margin: 25px 0 0;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: .14em;
+    }
+
+    .visual {
+      position: relative;
+      display: grid;
+      min-width: 0;
+      min-height: 380px;
+      align-content: center;
+      grid-area: visual;
+      align-self: center;
+      isolation: isolate;
+    }
+
+    .visual::before {
+      position: absolute;
+      z-index: -1;
+      top: 8%;
+      right: 2%;
+      width: min(86%, 490px);
+      aspect-ratio: 1;
+      border: 1px solid rgb(16 16 16 / 5%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgb(255 201 0 / 12%), rgb(255 201 0 / 3%) 55%, transparent 72%);
+      content: "";
+    }
+
+    .error-number {
+      position: relative;
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(150px, 22vw, 300px);
+      font-weight: 900;
+      letter-spacing: -.105em;
+      line-height: .8;
+      text-align: center;
+      text-shadow: 0 12px 0 rgb(16 16 16 / 3%);
+    }
+
+    .error-number span {
+      display: inline-block;
+      background: linear-gradient(155deg, #24272a 4%, #101010 50%, #565b5f 100%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .machine-scene {
+      width: 100%;
+      max-width: 590px;
+      justify-self: center;
+      margin-top: -17px;
+      overflow: visible;
+      filter: drop-shadow(0 18px 12px rgb(16 16 16 / 13%));
+    }
+
+    .track-mark {
+      fill: none;
+      stroke: #a9aaa5;
+      stroke-dasharray: 8 12;
+      stroke-linecap: round;
+      stroke-width: 7;
+    }
+
+    .ground {
+      fill: none;
+      stroke: #c7c8c2;
+      stroke-width: 1.5;
+    }
+
+    .machine-body { fill: #ffc900; }
+    .machine-dark { fill: #25282b; }
+    .machine-glass { fill: #d8e0df; }
+    .machine-line { fill: none; stroke: #17191b; stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; }
+    .machine-detail { fill: none; stroke: #6e5b12; stroke-linecap: round; stroke-width: 2; }
+    .roller { fill: #ffc900; stroke: #17191b; stroke-width: 4; }
+    .roller-core { fill: #17191b; }
+
+    @media (min-width: 1500px) {
+      .page { width: min(100% - 100px, 1360px); }
+      main { column-gap: 100px; }
+    }
+
+    @media (max-width: 760px) {
+      .page { width: min(100% - 40px, 560px); }
+      .topbar { padding-block: 18px; }
+      .brand-mark { width: 42px; height: 42px; }
+      main {
+        align-content: start;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+          "title"
+          "visual"
+          "description"
+          "actions"
+          "note";
+        padding-block: clamp(38px, 8vh, 70px) 36px;
+      }
+      h1 { max-width: 490px; font-size: clamp(39px, 9vw, 58px); }
+      .visual { min-height: 0; margin: 12px 0 0; }
+      .visual::before { top: 4%; right: 7%; width: 74%; }
+      .error-number { font-size: clamp(148px, 44vw, 250px); }
+      .machine-scene { width: min(100%, 480px); margin-top: -8px; }
+      .description { margin-top: 27px; }
+      .actions { margin-top: 24px; }
+    }
+
+    @media (max-width: 440px) {
+      .page { width: calc(100% - 36px); }
+      .actions { display: grid; grid-template-columns: 1fr; }
+      .button { width: 100%; min-height: 54px; }
+      .visual { margin-inline: -8px; }
+      .error-number { font-size: clamp(144px, 45vw, 196px); }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --ink: #f5f5f2;
+        --surface: #15171a;
+        --muted: #a4a8ad;
+        --line: #34373b;
+        --panel: #1b1d20;
+      }
+      body {
+        background:
+          radial-gradient(ellipse at 82% 48%, rgb(255 201 0 / 8%), transparent 34rem),
+          var(--surface);
+      }
+      .page::before {
+        background-image: linear-gradient(rgb(255 255 255 / 2.5%) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / 2.5%) 1px, transparent 1px);
+      }
+      .visual::before { border-color: rgb(255 255 255 / 6%); }
+      .error-number span {
+        background: linear-gradient(155deg, #fff 4%, #e7e8e4 50%, #8c9297 100%);
+        background-clip: text;
+      }
+      .track-mark { stroke: #6c7073; }
+      .ground { stroke: #45494d; }
+      .button-primary:focus-visible, .button-secondary:focus-visible { outline-color: #fff; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <img class="brand-mark" src="/assets/logo.png" alt="Potiguar Tratores" width="46" height="46">
+      <div class="brand-name" aria-hidden="true">
+        <span>POTIGUAR</span>
+        <span>TRATORES</span>
+      </div>
+    </header>
+    <main>
+    <main>
+      <h1 data-enter>Ops! Essa página saiu da rota.</h1>
+
+      <section class="visual" aria-label="Ilustração de uma máquina pesada sobre marcas de esteira">
+        <p class="error-number" aria-label="Erro 404"><span data-number>404</span></p>
+        <svg class="machine-scene" viewBox="0 0 620 250" role="img" aria-labelledby="machine-title machine-desc">
+          <title id="machine-title">Máquina pesada Potiguar Tratores</title>
+          <desc id="machine-desc">Uma máquina amarela avança sobre marcas de esteira e um terreno técnico.</desc>
+          <path class="track-mark" d="M45 195 C119 182 160 207 220 192 S319 186 377 198 S480 202 572 184"></path>
+          <path class="ground" d="M20 220 H600"></path>
+          <g id="machine">
+            <path class="machine-dark" d="M164 167h220c22 0 37 16 37 34s-15 34-37 34H164c-22 0-38-16-38-34s16-34 38-34Z"></path>
+            <path fill="#55595b" d="M170 176h206c17 0 29 11 29 25s-12 25-29 25H170c-17 0-29-11-29-25s12-25 29-25Z"></path>
+            <circle class="roller" cx="177" cy="201" r="14"></circle>
+            <circle class="roller" cx="225" cy="201" r="14"></circle>
+            <circle class="roller" cx="273" cy="201" r="14"></circle>
+            <circle class="roller" cx="321" cy="201" r="14"></circle>
+            <circle class="roller" cx="369" cy="201" r="14"></circle>
+            <circle class="roller-core" cx="177" cy="201" r="4"></circle>
+            <circle class="roller-core" cx="225" cy="201" r="4"></circle>
+            <circle class="roller-core" cx="273" cy="201" r="4"></circle>
+            <circle class="roller-core" cx="321" cy="201" r="4"></circle>
+            <circle class="roller-core" cx="369" cy="201" r="4"></circle>
+            <path class="machine-body" d="m148 164 20-56c5-14 18-23 33-23h111c15 0 27 9 33 23l22 57h-44l-11-35H194l-13 35Z"></path>
+            <path class="machine-line" d="m148 164 20-56c5-14 18-23 33-23h111c15 0 27 9 33 23l22 57"></path>
+            <path class="machine-glass" d="m203 93-17 48h65V93Z"></path>
+            <path class="machine-glass" d="M263 93v48h79l-18-41c-2-5-7-7-12-7Z"></path>
+            <path class="machine-line" d="M258 91v56"></path>
+            <path class="machine-line" d="M193 148h158"></path>
+            <path class="machine-body" d="M166 108h-22l-10 14 19 8Z"></path>
+            <path class="machine-dark" d="M213 151h105v15H194Z"></path>
+            <path class="machine-detail" d="M181 158h31m14 0h42m14 0h29"></path>
+            <path class="machine-dark" d="m350 151 30 9 21 1 6 10-49 1Z"></path>
+            <path class="machine-body" d="m387 160 26-9 11 5-20 15h-18Z"></path>
+            <path class="machine-line" d="m411 161 19-15 37-4 7 8-35 10"></path>
+            <path class="machine-body" d="m455 137 14-6 13 6-8 8-17 2Z"></path>
+            <path class="machine-line" d="M177 83V68h10v18m161 4V68h9v20"></path>
+            <path class="machine-body" d="M168 71h19v7h-19zm160 0h20v7h-20z"></path>
+          </g>
+        </svg>
+        </section>
+
+      <p class="description" data-enter>A página que você procura não foi encontrada ou não está mais disponível. Mas fique tranquilo: a Potiguar Tratores continua no caminho certo para ajudar você a encontrar as peças que precisa.</p>
+
+      <nav class="actions" aria-label="Opções de navegação">
+        <a class="button button-primary" href="/" data-enter>
+          Voltar para a página inicial
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4.75 12h14.5m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        <a class="button button-secondary" href="https://wa.me/5584991260097?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" data-enter>
+          Falar com nossa equipe
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20 11.5a7.5 7.5 0 0 1-11.2 6.5L4 19l1.1-4.5A7.5 7.5 0 1 1 20 11.5Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M9 9.25c.45 1.55 1.7 2.8 3.25 3.25" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path>
+          </svg>
+        </a>
+      </nav>
+
+      <p class="note" data-enter>ERRO 404 — PÁGINA NÃO ENCONTRADA</p>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+  <script>
+    (() => {
+      if (!window.gsap || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+      const elements = gsap.utils.toArray("[data-enter]");
+      gsap.from(elements, {
+        y: 14,
+        opacity: 0,
+        duration: 0.65,
+        stagger: 0.12,
+        ease: "power2.out",
+        clearProps: "all"
+      });
+      gsap.from("[data-number]", {
+        y: 20,
+        scale: 0.96,
+        opacity: 0,
+        duration: 0.85,
+        delay: 0.18,
+        ease: "power3.out",
+        clearProps: "all"
+      });
+      gsap.from("#machine", {
+        x: -22,
+        duration: 0.9,
+        delay: 0.42,
+        ease: "power2.out",
+        clearProps: "transform"
+      });
+      gsap.from(".track-mark", {
+        strokeDashoffset: 36,
+        duration: 0.8,
+        delay: 0.5,
+        ease: "power1.out",
+        clearProps: "strokeDashoffset"
+      });
+    })();
+  </script>
+</body>
+</html>
