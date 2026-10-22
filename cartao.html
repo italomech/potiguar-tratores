@@ -418,7 +418,80 @@
       .page-note { margin-top: 16px; }
     }
 
+    .brands {
+      margin-top: 22px;
+      padding: 30px 0 32px;
+      overflow: hidden;
+      border: 1px solid rgb(255 255 255 / 12%);
+      border-radius: 18px;
+      background: linear-gradient(120deg, #1b1f22, #121517);
+      box-shadow: 0 24px 70px rgb(0 0 0 / 30%);
+    }
+
+    .brands-header {
+      padding-inline: clamp(24px, 5vw, 62px);
+      margin-bottom: 26px;
+    }
+
+    .brands-title {
+      margin: 10px 0 0;
+      color: #fff;
+      font-size: clamp(20px, 2.6vw, 28px);
+      font-weight: 780;
+      letter-spacing: -.03em;
+      line-height: 1.15;
+    }
+
+    .brands-marquee {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    }
+
+    .brands-track {
+      display: flex;
+      width: max-content;
+      will-change: transform;
+    }
+
+    .brands-set {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      flex: 0 0 auto;
+      align-items: center;
+    }
+
+    .brand-logo {
+      display: grid;
+      flex: 0 0 auto;
+      place-items: center;
+      margin-right: 22px;
+      padding: 14px 24px;
+      border-radius: 10px;
+      background: #f2f2ee;
+    }
+
+    .brand-logo img {
+      display: block;
+      width: auto;
+      height: 45px;
+      filter: grayscale(1);
+      opacity: .85;
+      transition: filter 240ms ease, opacity 240ms ease;
+    }
+
+    .brand-logo:hover img { filter: grayscale(0); opacity: 1; }
+
+    @media (max-width: 520px) {
+      .brands { margin-top: 16px; padding-block: 24px 26px; border-radius: 13px; }
+      .brands-header { padding-inline: 22px; margin-bottom: 20px; }
+      .brand-logo { margin-right: 16px; padding: 12px 18px; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
+      .brands-marquee { overflow-x: auto; }
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
     }
   </style>
@@ -524,8 +597,55 @@
           </section>
         </div>
       </article>
+      <section class="brands" aria-labelledby="brands-title">
+        <div class="brands-header">
+          <span class="eyebrow">Marcas parceiras</span>
+          <h2 class="brands-title" id="brands-title">Peças para as Principais Marcas</h2>
+        </div>
+        <div class="brands-marquee">
+          <div class="brands-track" id="brands-track">
+            <ul class="brands-set" aria-label="Marcas atendidas">
+              <li class="brand-logo"><img src="assets/marcas/caterpillar.png" alt="Caterpillar"></li>
+              <li class="brand-logo"><img src="assets/marcas/komatsu.png" alt="Komatsu"></li>
+              <li class="brand-logo"><img src="assets/marcas/jcb.png" alt="JCB"></li>
+              <li class="brand-logo"><img src="assets/marcas/case.png" alt="Case"></li>
+              <li class="brand-logo"><img src="assets/marcas/newholland.png" alt="New Holland"></li>
+              <li class="brand-logo"><img src="assets/marcas/caterpillar.png" alt="" aria-hidden="true"></li>
+              <li class="brand-logo"><img src="assets/marcas/komatsu.png" alt="" aria-hidden="true"></li>
+              <li class="brand-logo"><img src="assets/marcas/jcb.png" alt="" aria-hidden="true"></li>
+              <li class="brand-logo"><img src="assets/marcas/case.png" alt="" aria-hidden="true"></li>
+              <li class="brand-logo"><img src="assets/marcas/newholland.png" alt="" aria-hidden="true"></li>
+            </ul>
+            <ul class="brands-set" aria-hidden="true">
+              <li class="brand-logo"><img src="assets/marcas/caterpillar.png" alt=""></li>
+              <li class="brand-logo"><img src="assets/marcas/komatsu.png" alt=""></li>
+              <li class="brand-logo"><img src="assets/marcas/jcb.png" alt=""></li>
+              <li class="brand-logo"><img src="assets/marcas/case.png" alt=""></li>
+              <li class="brand-logo"><img src="assets/marcas/newholland.png" alt=""></li>
+              <li class="brand-logo"><img src="assets/marcas/caterpillar.png" alt=""></li>
+              <li class="brand-logo"><img src="assets/marcas/komatsu.png" alt=""></li>
+              <li class="brand-logo"><img src="assets/marcas/jcb.png" alt=""></li>
+              <li class="brand-logo"><img src="assets/marcas/case.png" alt=""></li>
+              <li class="brand-logo"><img src="assets/marcas/newholland.png" alt=""></li>
+            </ul>
+          </div>
+        </div>
+      </section>
       <p class="page-note">Conheceu a Potiguar Tratores pelo Google? <a href="https://potiguartratores.com.br">Acesse o site oficial</a> ou fale diretamente com a equipe.</p>
     </main>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var track = document.getElementById("brands-track");
+      if (!track || !window.gsap) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+      var tween = gsap.to(track, { xPercent: -50, repeat: -1, duration: 28, ease: "none" });
+      var marquee = track.parentElement;
+      marquee.addEventListener("mouseenter", function () { tween.timeScale(0.25); });
+      marquee.addEventListener("mouseleave", function () { tween.timeScale(1); });
+    });
+  </script>
 </body>
 </html>
