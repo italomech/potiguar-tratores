@@ -4,7 +4,7 @@
 <title>Potiguar Tratores | Peças para Máquinas Pesadas e Material Rodante</title>
 <meta name="description" content="Encontre peças para máquinas pesadas e material rodante na Potiguar Tratores. Conheça nossos produtos e entre em contato para consultar disponibilidade.">
 <link rel="canonical" href="https://potiguartratores.com.br/"><meta property="og:title" content="Potiguar Tratores | Peças para Máquinas Pesadas e Material Rodante"><meta property="og:description" content="Encontre peças para máquinas pesadas e material rodante na Potiguar Tratores. Conheça nossos produtos e entre em contato para consultar disponibilidade."><meta property="og:type" content="website"><meta property="og:url" content="https://potiguartratores.com.br/"><meta property="og:site_name" content="Potiguar Tratores"><meta property="og:image" content="https://potiguartratores.com.br/fachada.jpg"><meta property="og:image:width" content="1600"><meta property="og:image:height" content="900"><meta property="og:image:alt" content="Fachada amarela da Potiguar Tratores, com placa e letreiro da empresa"><meta property="og:locale" content="pt_BR"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Potiguar Tratores | Peças para Máquinas Pesadas e Material Rodante"><meta name="twitter:description" content="Encontre peças para máquinas pesadas e material rodante na Potiguar Tratores. Conheça nossos produtos e entre em contato para consultar disponibilidade."><meta name="twitter:image" content="https://potiguartratores.com.br/fachada.jpg"><meta name="robots" content="index,follow,max-image-preview:large"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Potiguar Tratores","url":"https://potiguartratores.com.br/","logo":"https://potiguartratores.com.br/logo.png","description":"Peças para máquinas pesadas e material rodante.","telephone":"+558432181772","sameAs":["https://instagram.com/potiguartratores"]}</script>
-<script>document.documentElement.className+=" js";setTimeout(function(){document.documentElement.classList.add("done")},6000)</script><link rel="icon" type="image/png" href="./assets/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>document.documentElement.className+=" js";setTimeout(function(){document.documentElement.classList.add("done")},6000)</script><link rel="icon" type="image/png" href="./assets/favicon.png"><link rel="stylesheet" href="/assets/lenis/lenis.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{--y:#FFC900;--k:#101010;--g:#1B1D20;--m:#777D84;--bg:#F5F5F2;--ink:#101010;--card:#fff;--line:#dcdcd6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -173,6 +173,16 @@ if("IntersectionObserver"in window){const io=new IntersectionObserver(es=>es.for
 </script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
+<script src="/assets/lenis/lenis.min.js"></script>
+<script>
+(()=>{
+if(!window.Lenis||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+const lenis=new Lenis({anchors:{offset:-72}});
+window.lenis=lenis;
+if(window.gsap&&window.ScrollTrigger){lenis.on("scroll",ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0)}
+else{const raf=t=>{lenis.raf(t);requestAnimationFrame(raf)};requestAnimationFrame(raf)}
+})();
+</script>
 <script>
 /* Animações GSAP: se o GSAP não carregar, o CSS/IntersectionObserver anteriores continuam valendo. */
 (()=>{

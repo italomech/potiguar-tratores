@@ -224,7 +224,7 @@
           '</div>' +
         '</div>' +
       '</section>' +
-      '<dialog class="cc-dialog" id="pt-cookie-dialog" aria-labelledby="pt-cookie-dialog-title" aria-describedby="pt-cookie-dialog-description">' +
+      '<dialog class="cc-dialog" data-lenis-prevent id="pt-cookie-dialog" aria-labelledby="pt-cookie-dialog-title" aria-describedby="pt-cookie-dialog-description">' +
         '<div class="cc-dialog__content">' +
           '<div class="cc-dialog__heading">' +
             '<div><span class="cc-dialog__eyebrow">Privacidade e cookies</span><h2 id="pt-cookie-dialog-title">Central de preferências</h2>' +
